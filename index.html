@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="theme-color" content="#070817">
+    <meta name="description" content="HOLE: The Last Light — a neon cosmic arcade game.">
+     <title>HOLE: The Last Light</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="game">
+    <canvas id="canvas" aria-label="Game playfield"></canvas>
+
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="HOLE home">
+        <span class="brand-icon">◉</span>
+        <span>H<span class="accent">O</span>LE<small>THE LAST LIGHT</small></span>
+      </a>
+      <div class="stats" aria-live="polite">
+        <div><small>SCORE</small><strong id="score">000000</strong></div>
+        <div><small>BEST</small><strong id="best">000000</strong></div>
+        <div><small>TIME</small><strong id="time">60.0</strong></div>
+      </div>
+      <button id="pause-btn" class="icon-btn" aria-label="Pause game" title="Pause (P / Esc)">Ⅱ</button>
+    </header>
+
+    <div class="mission"><span class="live-dot"></span><span id="status">AWAITING SINGULARITY</span></div>
+
+    <div class="bottom-hud">
+      <div class="growth">
+        <div class="growth-label"><span>SINGULARITY</span><span id="level">LV. 01</span></div>
+        <div class="meter"><div id="growth-fill"></div></div>
+      </div>
+      <div class="combo" id="combo">×1 COMBO</div>
+      <div class="hint" id="hint">MOVE TO ABSORB · SPACE TO BURST</div>
+    </div>
+
+    <section id="menu" class="overlay">
+      <div class="panel">
+        <div class="eyebrow">✦ A COSMIC ARCADE EXPERIENCE ✦</div>
+        <div class="logo">H<span>O</span>LE</div>
+        <h1>THE LAST LIGHT</h1>
+        <p class="description">Consume the light. Bend the universe.<br>Become the thing that remains.</p>
+        <div class="feature-row"><span>✧ ABSORB</span><span>◈ EVOLVE</span><span>✦ SURVIVE</span></div>
+        <button id="start" class="primary">ENTER THE VOID <span>→</span></button>
+        <p class="controls">MOUSE / WASD TO MOVE <i>•</i> SPACE TO BURST</p>
+      </div>
+    </section>
+
+    <section id="pause-screen" class="overlay hidden">
+      <div class="panel compact">
+        <div class="eyebrow">TIME SUSPENDED</div>
+        <h2>TAKE A BREATH.</h2>
+        <p class="description">The universe can wait.</p>
+        <button id="resume" class="primary">RESUME <span>→</span></button>
+        <button id="quit" class="secondary">END RUN</button>
+      </div>
+    </section>
+
+    <section id="end-screen" class="overlay hidden">
+      <div class="panel compact">
+        <div class="eyebrow" id="end-eyebrow">THE VOID REMEMBERS</div>
+        <h2 id="end-title">TIME COLLAPSED.</h2>
+        <p class="description">Every star becomes a memory.</p>
+        <div class="final-score"><small>FINAL SCORE</small><strong id="final-score">000000</strong><span id="record"></span></div>
+        <button id="again" class="primary">PLAY AGAIN <span>↻</span></button>
+        <button id="home" class="secondary">MAIN MENU</button>
+      </div>
+    </section>
+
+    <div id="toast" role="status" aria-live="polite"></div>
+    <div id="flash"></div>
+    <footer>HOLE: THE LAST LIGHT <span>·</span> A LITTLE GAME ABOUT INFINITY</footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
